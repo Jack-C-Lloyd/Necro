@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright (c) 2020 Jack C. Lloyd. All rights reserved.
 
 #include "CI541.h"
 #include "Modules/ModuleManager.h"

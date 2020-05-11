@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright (c) 2020 Jack C. Lloyd. All rights reserved.
 
 #pragma once
 
@@ -7,11 +7,10 @@
 #include "CI541GameModeBase.generated.h"
 
 /**
- * 
+ * Game Mode Base.
  */
 UCLASS()
 class CI541_API ACI541GameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
 };
