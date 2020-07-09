@@ -214,7 +214,10 @@ void ACI541Player::Fire()
 
 	if (IsValid(Weapon))
 	{
-		Weapon->Fire();
+		if (!Weapon->Fire())
+		{
+			Reload();
+		};
 	}
 }
 
