@@ -1,4 +1,4 @@
-// Copyright (c) 2020 Jack C. Lloyd. All rights reserved.
+// Copyright (c) 2020-2022 Jack C. Lloyd. All rights reserved.
 
 #include "CI541Player.h"
 #include "CI541Inventory.h"
@@ -38,8 +38,13 @@ ACI541Player::ACI541Player(const FObjectInitializer& ObjectInitializer)
 
 	if (IsValid(SkeletalMesh))
 	{
-		SkeletalMesh->RelativeLocation = FVector(0.0f, 0.0f, -GetCapsuleComponent()->GetScaledCapsuleHalfHeight());
-		SkeletalMesh->RelativeRotation = FRotator(0.0f, -90.0f, 0.0f);
+		float NegativeHalfHeight = -GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+		float ForwardAngleOffset = -90.0f;
+
+		SkeletalMesh->SetRelativeLocationAndRotation(FVector(0.0f, 0.0f, NegativeHalfHeight), FRotator(0.0f, ForwardAngleOffset, 0.0f));
+
+		// SkeletalMesh->RelativeLocation = FVector(0.0f, 0.0f, -GetCapsuleComponent()->GetScaledCapsuleHalfHeight());
+		// SkeletalMesh->RelativeRotation = FRotator(0.0f, -90.0f, 0.0f);
 
 		static ConstructorHelpers::FObjectFinder<USkeletalMesh>
 		SkeletalMeshFinder(TEXT("SkeletalMesh'/Game/Characters/Player/Mesh/SK_Player_SkeletalMesh.SK_Player_SkeletalMesh'"));
@@ -53,12 +58,17 @@ ACI541Player::ACI541Player(const FObjectInitializer& ObjectInitializer)
 			UE_LOG(LogTemp, Warning, TEXT("Unable to find \"%s\""), *SkeletalMeshFinder.GetReferencerName());
 		}
 
-		static ConstructorHelpers::FObjectFinder<UAnimBlueprint>
-		AnimBlueprintFinder(TEXT("AnimBlueprint'/Game/Characters/Player/Blueprints/BP_Player_AnimBlueprint.BP_Player_AnimBlueprint'"));
+		// static ConstructorHelpers::FObjectFinder<UAnimBlueprint>
+		// AnimBlueprintFinder(TEXT("AnimBlueprint'/Game/Characters/Player/Blueprints/BP_Player_AnimBlueprint.BP_Player_AnimBlueprint'"));
 
-		if (AnimBlueprintFinder.Succeeded())
+		static ConstructorHelpers::FObjectFinder<UClass>
+		AnimBlueprintFinder(TEXT("AnimBlueprint'/Game/Characters/Player/Blueprints/BP_Player_AnimBlueprint.BP_Player_AnimBlueprint_C'"));
+
+		// if (AnimBlueprintFinder.Succeeded())
+		if (AnimBlueprintFinder.Object != NULL)
 		{
-			SkeletalMesh->SetAnimInstanceClass(AnimBlueprintFinder.Object->GetAnimBlueprintGeneratedClass());
+			// SkeletalMesh->SetAnimInstanceClass(AnimBlueprintFinder.Object->GetAnimBlueprintGeneratedClass());
+			SkeletalMesh->SetAnimInstanceClass(AnimBlueprintFinder.Object);
 		}
 		else
 		{
@@ -142,8 +152,10 @@ ACI541Player::ACI541Player(const FObjectInitializer& ObjectInitializer)
 
 	if (IsValid(ChildActor))
 	{
-		ChildActor->RelativeLocation = FVector(-7.0f, 6.0f, -3.0f);
-		ChildActor->RelativeRotation = FRotator(0.0f, 90.0f, 0.0f);
+		ChildActor->SetRelativeLocationAndRotation(FVector(-7.0f, 6.0f, -3.0f), FRotator(0.0f, 90.0f, 0.0f));
+
+		// ChildActor->RelativeLocation = FVector(-7.0f, 6.0f, -3.0f);
+		// ChildActor->RelativeRotation = FRotator(0.0f, 90.0f, 0.0f);
 
 		ChildActor->SetupAttachment(GetMesh(), ACI541Player::ChildActorSocketName);
 	}

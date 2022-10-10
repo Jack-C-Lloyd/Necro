@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 Jack C. Lloyd. All rights reserved.
+// Copyright (c) 2020-2022 Jack C. Lloyd. All rights reserved.
 
 #include "CI541Weapon.h"
 
@@ -112,6 +112,8 @@ ACI541Weapon::ACI541Weapon(const FObjectInitializer& ObjectInitializer)
 
 void ACI541Weapon::BeginPlay()
 {
+	Super::BeginPlay();
+	
 	Loaded = Capacity;
 }
 
