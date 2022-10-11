@@ -1,4 +1,4 @@
-![banner](https://github.com/Jack-C-Lloyd/Necro/Images/Banner.png)
+![banner](Images/Banner.png)
 
 # Necro
 
@@ -14,14 +14,14 @@ Pre-compiled builds are available via [Google Drive](https://drive.google.com/dr
 
 ## Screenshots
 
-![Screenshot 1](https://github.com/Jack-C-Lloyd/Necro/Images/Screenshot_1.png)
+![Screenshot 1](Images/Screenshot_1.png)
 
-![Screenshot 2](https://github.com/Jack-C-Lloyd/Necro/Images/Screenshot_2.png)
+![Screenshot 2](Images/Screenshot_2.png)
 
-![Screenshot 3](https://github.com/Jack-C-Lloyd/Necro/Images/Screenshot_3.png)
+![Screenshot 3](Images/Screenshot_3.png)
 
-![Screenshot 4](https://github.com/Jack-C-Lloyd/Necro/Images/Screenshot_4.png)
+![Screenshot 4](Images/Screenshot_4.png)
 
-![Screenshot 5](https://github.com/Jack-C-Lloyd/Necro/Images/Screenshot_5.png)
+![Screenshot 5](Images/Screenshot_5.png)
 
-![Screenshot 6](https://github.com/Jack-C-Lloyd/Necro/Images/Screenshot_6.png)
+![Screenshot 6](Images/Screenshot_6.png)
