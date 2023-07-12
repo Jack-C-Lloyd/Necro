@@ -16,16 +16,16 @@ FName ACI541Explosive::SoundBaseComponentName(TEXT("SoundBaseComponent"));
 ACI541Explosive::ACI541Explosive(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
-	UStaticMeshComponent* StaticMesh = GetStaticMesh();
+	UStaticMeshComponent* _StaticMesh = GetStaticMesh();
 
-	if (IsValid(StaticMesh))
+	if (IsValid(_StaticMesh))
 	{
 		static ConstructorHelpers::FObjectFinder<UStaticMesh>
 		MeshFinder(TEXT("StaticMesh'/Game/Weapons/Meshes/SM_GrenadeLauncher_Projectile.SM_GrenadeLauncher_Projectile'"));
 
 		if (MeshFinder.Succeeded())
 		{
-			StaticMesh->SetStaticMesh(MeshFinder.Object);
+			_StaticMesh->SetStaticMesh(MeshFinder.Object);
 		}
 		else
 		{

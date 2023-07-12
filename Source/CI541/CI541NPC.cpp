@@ -65,35 +65,35 @@ ACI541NPC::ACI541NPC(const FObjectInitializer& ObjectInitializer)
 		UE_LOG(LogTemp, Warning, TEXT("Unable to access default subobject \"SkeletalMesh\""));
 	}
 
-	UCapsuleComponent* CapsuleComponent= GetCapsuleComponent();
+	UCapsuleComponent* _CapsuleComponent= GetCapsuleComponent();
 
-	if (IsValid(CapsuleComponent))
+	if (IsValid(_CapsuleComponent))
 	{
-		CapsuleComponent->SetCapsuleHalfHeight(88.0f);
-		CapsuleComponent->SetCapsuleRadius(34.0f);
+		_CapsuleComponent->SetCapsuleHalfHeight(88.0f);
+		_CapsuleComponent->SetCapsuleRadius(34.0f);
 	}
 	else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Unable to access default subobject \"CapsuleComponent\""));
 	}
 
-	UCharacterMovementComponent* CharacterMovement = GetCharacterMovement();
+	UCharacterMovementComponent* _CharacterMovement = GetCharacterMovement();
 
-	if (IsValid(CharacterMovement))
+	if (IsValid(_CharacterMovement))
 	{
-		CharacterMovement->CrouchedHalfHeight = 68.0f;
-		CharacterMovement->MaxWalkSpeed = 225.0f;
-		CharacterMovement->MaxWalkSpeedCrouched = 180.0f;
-		CharacterMovement->bCanWalkOffLedges = false;
-		CharacterMovement->bCanWalkOffLedgesWhenCrouching = false;
-		CharacterMovement->MaxCustomMovementSpeed = 180.0f;
-		CharacterMovement->RotationRate = FRotator(0.0f, 360.0f, 0.0f);
-		CharacterMovement->bUseControllerDesiredRotation = true;
-		CharacterMovement->NavAgentProps.bCanCrouch = true;
-		CharacterMovement->NavAgentProps.bCanJump = false;
-		CharacterMovement->NavAgentProps.bCanWalk = true;
-		CharacterMovement->NavAgentProps.bCanSwim = false;
-		CharacterMovement->NavAgentProps.bCanFly = false;
+		_CharacterMovement->CrouchedHalfHeight = 68.0f;
+		_CharacterMovement->MaxWalkSpeed = 225.0f;
+		_CharacterMovement->MaxWalkSpeedCrouched = 180.0f;
+		_CharacterMovement->bCanWalkOffLedges = false;
+		_CharacterMovement->bCanWalkOffLedgesWhenCrouching = false;
+		_CharacterMovement->MaxCustomMovementSpeed = 180.0f;
+		_CharacterMovement->RotationRate = FRotator(0.0f, 360.0f, 0.0f);
+		_CharacterMovement->bUseControllerDesiredRotation = true;
+		_CharacterMovement->NavAgentProps.bCanCrouch = true;
+		_CharacterMovement->NavAgentProps.bCanJump = false;
+		_CharacterMovement->NavAgentProps.bCanWalk = true;
+		_CharacterMovement->NavAgentProps.bCanSwim = false;
+		_CharacterMovement->NavAgentProps.bCanFly = false;
 	}
 	else
 	{

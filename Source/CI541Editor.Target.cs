@@ -8,7 +8,7 @@ public class CI541EditorTarget : TargetRules
 	public CI541EditorTarget(TargetInfo Target) : base(Target)
 	{
 		bOverrideBuildEnvironment = true;
-		AdditionalCompilerArguments = "-Wno-unused-but-set-variable";
+		//AdditionalCompilerArguments = "-Wno-unused-but-set-variable";
 
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 		bLegacyPublicIncludePaths = true;
